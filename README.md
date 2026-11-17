@@ -11,6 +11,7 @@ GitHub Pages가 `main` 브랜치의 저장소 루트를 그대로 배포합니�
 | `style.css` | 공용 스타일(밝은 하늘색 바탕, 다이스 폴리 일러스트 색을 포인트로) |
 | `images/` | 다이스 폴리 세로 타이틀 화면(`dicepoly-title.webp`, 도시 그림 위에 로고를 합친 것), 로고 단독(`dicepoly-logo.webp`), 링크 공유 미리보기(`og.jpg`), 파비콘 |
 | `.nojekyll` | GitHub Pages가 Jekyll 변환 없이 파일을 그대로 올리게 하는 표시 |
+| `googlef879862bf95c71e7.html` | Google Search Console 소유 확인 파일. 확인 후에도 지우면 안 됩니다 |
 | `CNAME` | (도메인 연결 후 추가) 사용자 도메인 이름 |
 
 - 문의 이메일(jinenim3@gmail.com)은 모든 html에 같은 값이 들어 있습니다. 바꿀 때 전부 같이 바꿉니다.
