@@ -1,0 +1,75 @@
+/*
+ * 템페스트스튜디오 회사 웹사이트 공용 스타일.
+ * index.html, privacy.html, en/*.html 이 모두 이 파일 하나를 읽습니다.
+ * 외부 글꼴·스크립트 없이 정적 파일만으로 동작하도록 시스템 글꼴을 씁니다
+ * (GitHub Pages나 Apache 어디에 올려도 그대로 열리게 하기 위함).
+ */
+:root {
+  --bg: #0f1420;
+  --surface: #171e2e;
+  --text: #e8ecf4;
+  --muted: #9aa5ba;
+  --accent: #5b8cff;
+  --line: #263049;
+  --max: 960px;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Malgun Gothic", "Noto Sans KR", "Segoe UI", Roboto, sans-serif;
+  line-height: 1.7;
+  word-break: keep-all; /* 한국어 단어가 줄 끝에서 쪼개지지 않게 */
+}
+a { color: var(--accent); }
+.wrap { max-width: var(--max); margin: 0 auto; padding: 0 20px; }
+
+header.site {
+  border-bottom: 1px solid var(--line);
+}
+header.site .wrap {
+  display: flex; align-items: center; justify-content: space-between;
+  height: 64px; gap: 16px;
+}
+.logo { white-space: nowrap; font-weight: 700; font-size: 18px; color: var(--text); text-decoration: none; letter-spacing: .02em; }
+nav.site a { color: var(--muted); text-decoration: none; margin-left: 18px; font-size: 14px; }
+nav.site a:hover { color: var(--text); }
+
+.hero { padding-top: 88px; padding-bottom: 72px; } /* .wrap 의 좌우 여백을 지우지 않도록 위아래만 */
+.hero h1 { font-size: clamp(30px, 5vw, 46px); line-height: 1.25; margin: 0 0 16px; }
+.hero p { color: var(--muted); font-size: 18px; max-width: 640px; margin: 0; }
+
+section { padding: 48px 0; border-top: 1px solid var(--line); }
+section h2 { font-size: 22px; margin: 0 0 20px; }
+
+.games { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 20px; }
+.card h3 { margin: 0 0 6px; font-size: 18px; }
+.card p { margin: 0; color: var(--muted); font-size: 14px; }
+.tag { display: inline-block; font-size: 12px; color: var(--muted); border: 1px solid var(--line); border-radius: 999px; padding: 1px 10px; margin-bottom: 10px; }
+
+dl.info { display: grid; grid-template-columns: 140px 1fr; gap: 8px 16px; margin: 0; }
+dl.info dt { color: var(--muted); }
+dl.info dd { margin: 0; }
+
+footer.site { border-top: 1px solid var(--line); padding: 28px 0 40px; color: var(--muted); font-size: 13px; }
+footer.site a { color: var(--muted); }
+
+/* 개인정보처리방침 같은 긴 문서 */
+.doc { padding-top: 48px; padding-bottom: 72px; }
+.doc h1 { font-size: 28px; margin: 0 0 8px; }
+.doc h2 { font-size: 19px; margin: 36px 0 10px; }
+.doc p, .doc li { color: #d3d9e6; }
+.doc table { border-collapse: collapse; width: 100%; font-size: 14px; }
+.doc th, .doc td { border: 1px solid var(--line); padding: 8px 10px; text-align: left; vertical-align: top; }
+.doc th { background: var(--surface); }
+.meta { color: var(--muted); font-size: 14px; }
+
+@media (max-width: 560px) {
+  nav.site a { margin-left: 12px; }
+  nav.site a[href^="#"] { display: none; } /* 좁은 화면에서는 같은 페이지 안 이동 링크를 숨겨 머리글을 한 줄로 유지 */
+  dl.info { grid-template-columns: 1fr; gap: 2px; }
+  dl.info dd { margin-bottom: 10px; }
+}
